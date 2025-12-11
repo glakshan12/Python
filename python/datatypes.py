@@ -1,0 +1,12 @@
+a=10
+print(type(a))
+b="laksh"
+print(type(b))
+c=10.5
+print(type(c))
+d=22222.34567
+print(type(d))
+e=2+4j
+print(type(e))
+f=234567
+print(type(f))

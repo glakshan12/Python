@@ -1,0 +1,15 @@
+a=5
+b=10
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a%b)
+print(a//b)
+print(a**b)
+length=25
+width=30
+area=length*width
+perimeter=2*(length+width)
+print(area)
+print(perimeter)
