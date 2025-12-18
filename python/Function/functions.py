@@ -61,5 +61,5 @@ print(max([1,2,3,4]))
 print(min([1,2,3,4,5]))
 print(sum([1,2,3]))
 print(type([1,2,3,4,5]))
-
+#function used with classes and objects and 
 
