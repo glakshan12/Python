@@ -5,7 +5,7 @@ def numbers(n):
     numbers(n-1)#post 
     print(n)
 numbers(3)
-
+""" 
 def numbers(n):
     if n==0:
         return
@@ -26,14 +26,16 @@ def fibanocci(n):
         return 0
     if n==1:
         return 1
-    return fibanocci(n-1)+fibanocci(n-2)
-print(fibanocci(10))
+    fibanocci(n-1)+fibanocci(n-2)
+print(fibanocci(6))
 
 #sum of digits
 def sum(n):
     if n==0:
         return 0
     return (n%10) + sum(n//10)
-print(sum(1234))
+print(sum(1234)) """
+
+
 
 

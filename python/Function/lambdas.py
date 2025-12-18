@@ -35,3 +35,4 @@ data = [
 # sort by element at index 1, then by element at index 2
 sorted_data = sorted(data, key=lambda x: (x[1], x[2]))
 print(sorted_data)
+
