@@ -139,7 +139,7 @@ class child(parent):
 b=child() """
 
 #diamond pattern
-n=4
+""" n=4
 for i in range(1,n+1):
     for j in range(1,n-i+1):
         print(" ",end=" ")
@@ -180,13 +180,13 @@ for i in arr:
         sec=i
 print(sec)
 
-""" arr=[12,35,1,10,24,1]
+arr=[12,35,1,10,24,1]
 lar=float(-'inf')
 sec=float(-'inf')
 third=float(-'inf')
 for i in arr:
     if i>lar:
-        sec= """
+        sec=
 
 a=set([1,2,3,4,5])
 b=set([1,2,3])
@@ -242,7 +242,7 @@ for i in range(1,n+1):
         print(val,end=" ")
         val=1-val
     print()
-print()
+print() """
 
 """ n=4
 for i in range(1,n+1):
@@ -262,7 +262,7 @@ for i in range(1,n+1):
 
 
 #reverse an array using two pointers
-arr=[1,2,3,4]
+""" arr=[1,2,3,4]
 l=0
 r=len(arr)-1
 if l<r:
@@ -326,3 +326,196 @@ def rev(n,result):
     digits=n%10
     return rev (n//10, result*10+digits)
 print(rev(1234,0))
+
+
+n=5
+for i in range(n,0,-1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+print()
+
+
+n=4
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+for i in range(n-1,0,-1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+
+n=4
+for i in range(1,n+1):
+    for j in range(n-i):
+        print(" ",end=" ")
+    for s in range(i):
+        print("*",end=" ")
+    print()
+for i in range(n-1,0,-1):
+    for s in range(n-i):
+        print(" ",end=" ")
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+
+n=3
+for i in range(1,n+1):
+    for j in range(i):
+        print("*",end=" ")
+    for s in range(2*n-2*i):
+        print(" ",end=" ")
+    for k in range(i):
+        print("*",end=" ")
+    print()
+
+n=4
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(chr(ord("A")+j-1),end=" ")
+    print()
+
+arr=[2,3,5,4,1]
+arr.sort(reverse=True)
+print(arr)
+
+#check if array is sorted or not?
+arr=[2,4,8,6,10]
+is_sorted=True
+for i in range(len(arr)-1):
+    if arr[i]>arr[i+1]:
+        is_sorted=False
+        break
+if not is_sorted:
+    print(is_sorted)
+
+arr=[10,8,6,4,2]
+descending=True
+for i in range(len(arr)-1):
+    if arr[i]<arr[i+1]:
+        descending=False
+        break
+print(descending)
+
+#reverse an array
+arr=[1,2,3,4,5]
+l=0
+r=4
+while l<=r:
+    arr[l],arr[r]=arr[r],arr[l]
+    l+=1
+    r-=1
+print(arr)
+
+#find if array is consecutive or not
+arr=[4,2,3,5,1]
+consecutive=True
+max=5
+min=1
+if max-min+1!=len(arr):
+    consecutive=False
+print(consecutive)
+
+#find the missing positive integer need to check this
+arr=[3,4,-1,1,1]
+b=set()
+n=4
+sum=n*(n+1)//2
+count=0
+for i in arr:
+    if i>0:
+        b.add(i)
+for i in b:
+    count=count+i
+missed=sum-count
+print(missed)
+
+def a(n):
+    if n<=0:
+        return 0
+    return (n%10)+a(n//10)
+print(a(12345))
+
+#sum of n natural numbers
+def b(n):
+    if n==1:
+        return 1
+    return(n)+b(n-1)
+print(b(5))
+
+#count the no of digits using recursion
+def c(n):
+    if n==0:
+        return 0
+    return 1+c(n//10)
+print(c(12345))
+
+#power the number 
+def num(n,m):
+    if m==0:
+        return 1
+    return n*num(n,m-1)
+print(num(2,3)) """
+
+arr=[1,2,3,4,3]
+k=6
+count=0
+for i in range(len(arr)):
+    for j in range(i+1, len(arr)):
+        if arr[i]+arr[j]==k:
+            count+=1
+print(count)
+
+
+arr=[1,2,3,4,3]
+k=6
+c=0
+seen={}
+for i in arr:
+    if k-i in seen:
+        c+=1
+    seen[i]=1
+print(seen)
+print(c)
+
+
+#return true if first occurance is k
+arr=[10,15,3,7]
+k=17
+for i in range(len(arr)):
+    for j in range(i+1,len(arr)):
+        if arr[i]+arr[j]==k:
+            print("true")
+            break
+
+#return count pair equal to k
+arr=[-1,1,2,-2,3]
+k=0
+count=0
+for i in range(len(arr)):
+    for j in range(i+1,len(arr)):
+        if arr[i]+arr[j]==k:
+            count+=1
+print(count)
+
+#return pair equal to k
+arr=[1,5,7,-1,5]
+k=6
+seen=set()
+for i in range(len(arr)):
+    for j in range(i+1,len(arr)):
+        if arr[i]+arr[j]==k:
+            pair=tuple(sorted((arr[i],arr[j])))
+            if pair not in seen:
+                seen.add(pair)
+                print(pair)
+
+#return total sum of elements
+def total(n):
+    if n==[]:
+        return 0
+    return n[0]+total(n[1:])
+arr=[1, 2, 3, 4, 5]
+result=total(arr)
+print(result)
