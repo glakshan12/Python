@@ -23,3 +23,8 @@ p.pop()
 print(p)
 p.pop(2)
 print(p)
+def access():
+    a=[1,2,3,4,5]
+    b=[10]
+    a.append(b)
+access()

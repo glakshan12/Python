@@ -293,11 +293,11 @@ for i in arr:
 print(duplicate)
 
 #move the zeros to one end
-arr=[0,1,0,3,12]
+arr=[0,1,0,3,12]#
 pos=0
 for i in range(len(arr)):
     if arr[i]!=0:
-        arr[i],arr[pos]=arr[pos],arr[i]
+        arr[i],arr[pos]=arr[pos],arr[i] #[1,3,12,0,0]
         pos=pos+1
 print(arr)
 
@@ -626,7 +626,7 @@ for i in range(n,0,-1):
 
 #2d array
 #col wise sum
-matrix=[[1,2,3],
+""" matrix=[[1,2,3],
         [4,5,6]]
 for j in range(len(matrix[0])):
     c=0
@@ -634,11 +634,11 @@ for j in range(len(matrix[0])):
         c=c+matrix[i][j]
     print(c)
 
-""" for j in range(len(matrix[0])):
+for j in range(len(matrix[0])):
     col_sum = 0
     for i in range(len(matrix)):
         col_sum = col_sum + matrix[i][j]
-    print("Column", j, "sum =", col_sum) """
+    print("Column", j, "sum =", col_sum)
 
 #print array
 arr=[[1,2,3],
@@ -654,6 +654,7 @@ for i in range(len(arr)):
         print(arr[i][j],end=" ")
     print()
 
+#row wise sum
 arr=[[1,2,3],
     [4,5,6]]
 for i in range(len(arr)):
@@ -670,3 +671,265 @@ for j in range(len(arr[0])):
     for i in range(len(arr)):
         c+=arr[i][j]
     print("col",j,"sum",c)
+
+#maximun in 2d array
+arr=[[1,2,3],
+     [4,5,6]
+     ]
+maximum=float('-inf')
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        if arr[i][j] >maximum:
+           maximum=arr[i][j]
+print(maximum)
+
+
+#minimum in 2d array
+arr=[[1,2,3],
+     [4,5,6]
+     ]
+minimum=float('inf')
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        if arr[i][j]<minimum:
+            minimum=arr[i][j]
+print(minimum)
+
+#find element in 2d array
+arr=[[1,2,3],
+[4,5,6]]
+x=3
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        if arr[i][j]==x:
+            print(i,j)
+
+arr=[[1,2,3],
+[4,5,6]]
+row1=float('-inf')
+row2=float('-inf')
+for i in range(len(arr)):
+    row_sum=0
+    for j in range(len(arr[i])):
+        row_sum+=arr[i][j]
+        if row_sum>row1:
+            row1=row_sum
+            row2=row1
+        elif row_sum<row1 and row_sum>row2:
+            row2=row_sum
+print("row2",row2)
+
+
+#pattern printing
+n=6
+for i in range(3,n+1):
+   if i ==3:
+       print(i,end=" ")
+   else:
+       print(i,end="")
+       for j in range(3,i):
+           print("*",i,end="")
+   print()
+
+#new pattern
+print("code editor pattern")
+n=6
+for i in range(6,2,-1):
+    if i==3:
+        print(i,end=" ")
+    else:
+        print(i,end="")
+        for j in range(3,i):
+            print("*",i,end=" ")
+    print()
+for i in range(3,n+1):
+   if i ==3:
+       print(i,end=" ")
+   else:
+       print(i,end="")
+       for j in range(3,i):
+           print("*",i,end="")
+   print()     
+
+arr=[1,2,3,4,5]
+k=3
+print(arr[-k:]+arr[:-k])
+print(arr[:k])
+
+arr=[1,2,3,4,5]
+k = 3
+window_sum = sum(arr[:k])
+max_sum = window_sum
+for i in range(k, len(arr)):
+    window_sum += arr[i] - arr[i-k]
+    max_sum = max(max_sum, window_sum)
+print(max_sum)
+
+
+arr=[1,2,3,4,5]
+max_sum = curr_sum = arr[0]
+for i in range(1, len(arr)):
+    curr_sum = max(arr[i], curr_sum + arr[i])
+    max_sum = max(max_sum, curr_sum)
+print(max_sum)
+
+arr = [1, 2, 3, 2, 4, 1]
+n = len(arr)
+for i in range(n):
+    for j in range(i+1,n):
+        if arr[i]==arr[j]:
+            print(arr[i])
+arr = [1, 2, 3, 2, 4, 1]
+b=[]
+for i in arr:
+    if i not in b:
+        b.append(i)
+    else:
+        print(i)
+
+arr = [1, 2, 3, 2, 4, 1]
+freq={}
+for i in arr:
+    freq[i]=freq.get(i,0)+1
+for key,value in freq.items():
+    if value>1:
+        print(key)
+
+arr=[[1,2,3],
+     [4,5,6],
+     [3]]
+total=float('-inf')
+for i in range(len(arr)):
+    row=0
+    for j in range(len(arr[i])):
+        row=row+arr[i][j]
+    if row>total:
+        total=row
+print(total)
+
+
+print("row wise sum with index")
+arr=[[1,2,3],
+     [4,5,6]]
+count=0
+max_row=0
+for i in range(len(arr)):
+    row=0
+    for j in range(len(arr[i])):
+        row+=arr[i][j]
+    if row>count:
+        count=row
+        max_row=i
+print(max_row)
+print(count)
+
+print("col wise sum with index")
+arr=[[1,2,3],
+     [4,5,6]]
+count=float('-inf')
+max_col=0
+for j in range(len(arr[0])):
+    col=0
+    for i in range(len(arr)):
+        col+=arr[i][j]
+    if col>count:
+        count=col
+        max_col=j
+print(max_col)
+print(count)
+
+
+print("diagonal")
+arr = [
+ [1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]
+]
+n=len(arr)
+diagonal=0
+dia=0
+for i in range(n):
+    diagonal+=arr[i][i]
+    dia+=arr[i][n-1-i]
+print(diagonal)
+print(dia)
+
+arr = [-7, 1, 5, 2, -4, 3, 0]
+left=0
+total=sum(arr)
+for i in arr:
+    total=total-i
+    if total==left:
+       print(i)
+       break
+    left+=i
+
+arr = [1, 3, 5, 2, 2]
+left=0
+total=sum(arr)
+for i in range(len(arr)):
+    right=total-left-arr[i]
+    if left==right:
+        print(i)
+    left+=arr[i]
+
+arr=[1,2,3,4,3]
+k=6
+c=0
+seen={}
+for i in arr:
+    if k-i in seen:
+        c+=1
+    seen[i]=1
+print(seen)
+print(c) """
+
+#print maximum subarray sum
+nums = [5,4,-1,7,8]
+current=0
+maximum=float('-inf')
+for i in nums:
+    current+=i
+    if current<i:
+        current=i
+    if current>maximum:
+        maximum=current
+print(maximum)
+
+#print maximum subarray
+arr=[-2,3,-1,2]
+current=arr[0]
+maximum=arr[0]
+start=0
+temp=0
+end=0
+for i in range(len(arr)):
+    current+=arr[i]
+    if current>maximum:
+        maximum=current
+        start=temp
+        end=i
+    if current<0:
+        current=arr[i]
+        temp+=1
+print(maximum)
+print(arr[start:end+1])
+
+arr= [4, -1, 2, 1]
+current=0
+maximum=arr[0]
+start=0#temp start
+astart=0
+end=0
+for i in range(len(arr)):
+    current+=arr[i]
+    if current>maximum:
+        maximum=current
+        start=astart
+        end=i
+    if current<0:
+        current=0
+        start+=1
+print("maximum:", maximum,arr[astart:end+1])
+print(len(arr[astart:end+1]))
+
